@@ -1,11 +1,6 @@
 const { readFileSync } = require('fs');
 const http = require('http');
 
-const homePage = readFileSync('./navbar-app/index.html')
-const homeStyles = readFileSync('./navbar-app/styles.css');
-const homeImage = readFileSync('./navbar-app/logo.svg');
-const homeLogic = readFileSync('./navbar-app/browser-app.js');
-
 const server = http.createServer((req, res) => {
 	// console.log(req.method);
 	const url = req.url;
