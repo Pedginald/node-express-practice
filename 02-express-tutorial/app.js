@@ -2,11 +2,13 @@ const express = require('express');
 const app = express();
 const logger = require('./logger');
 
-app.get('/', logger, (req, res) => {
+app.use(logger);
+
+app.get('/', (req, res) => {
 	return res.send('Home');
 })
 
-app.get('/about', logger, (req, res) => {
+app.get('/about', (req, res) => {
 	return res.send('About');
 })
 
