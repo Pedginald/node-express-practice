@@ -18,6 +18,16 @@ app.post('/api/people', (req, res) => {
 	return res.status(201).json({ success: true, person: name});
 })
 
+app.post('/api/postman/people', (req, res) => {
+	const { name } = req.body;
+	if (!name) {
+		return res
+			.status(400)
+			.json({ success: false, msg: 'Please provide a name value' })
+	}
+	return res.status(201).json({ success: true, data: [...people, name] })
+})
+
 app.post('/login', (req, res) => {
 	const { name } = req.body;
 	console.log(req.body);
